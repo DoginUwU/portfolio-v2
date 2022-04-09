@@ -1,14 +1,14 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar';
+import AboutMe from '../../layouts/Home/AboutMe';
 import Hero from '../../layouts/Home/Hero';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Home: React.FC = () => (
-    <>
-        <Sidebar />
+    <Container>
         <Hero />
-    </>
+        <AboutMe />
+    </Container>
 );
 
 export default Home;

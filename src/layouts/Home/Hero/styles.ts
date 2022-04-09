@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const Container = styled.div`
     width: 100%;
     height: 100vh;
+    padding-bottom: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 85px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         padding: 10px;
@@ -19,7 +19,7 @@ const Content = styled.div`
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 `;
 
@@ -52,8 +52,11 @@ const Left = styled.div`
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        max-width: 100%;
+
         & h1 {
             font-size: 3rem;
+            text-align: center;
         }
 
         & p {

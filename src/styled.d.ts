@@ -10,6 +10,8 @@ declare module 'styled-components' {
             gray: {
                 900: string;
                 800: string;
+                700: string;
+                600: string;
             };
             semantic: {
                 blue: string;
