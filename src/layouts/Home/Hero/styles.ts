@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import BaseContainer from '../../../components/BaseContainer';
 
-const Container = styled.div`
+const Container = styled(BaseContainer)`
     width: 100%;
     height: 100vh;
     padding-bottom: 32px;

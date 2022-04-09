@@ -6,10 +6,11 @@ import { Container } from './styles';
 interface CardProps {
     title: string;
     icon: string | IconifyIcon;
+    color?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, icon }) => (
-    <Container>
+const Card: React.FC<CardProps> = ({ title, icon, color }) => (
+    <Container color={color} whileHover={{ translateY: -5 }}>
         <div>
             <Icon icon={icon} />
         </div>

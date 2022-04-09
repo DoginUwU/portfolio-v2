@@ -35,6 +35,12 @@ const Container = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         align-items: center;
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        & > h1 {
+            font-size: 1.5rem;
+        }
+    }
 `;
 
 export { Container };

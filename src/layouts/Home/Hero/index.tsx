@@ -12,7 +12,9 @@ const Hero: React.FC = () => (
                     <span>Luiz Eduardo</span> Desenvolvedor Full-stack
                 </h1>
                 <p>Um apaixonado desenvolvedor web front-end brasileiro.</p>
-                <Button type="button">Meus projetos</Button>
+                <Button type="button" blur>
+                    Meus projetos
+                </Button>
             </Left>
             <Right>
                 <img src="assets/rectangle_1.svg" alt="Me" />

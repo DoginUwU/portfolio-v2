@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import Title from '../../../components/Title';
 
@@ -19,7 +20,18 @@ const AboutMe: React.FC = () => (
             </p>
             <p>Desafios são sempre bem-vindos. é necessário melhorar.</p>
         </Content>
-        <img src="/assets/startup.svg" alt="Startup" />
+        <motion.img
+            src="/assets/startup.svg"
+            alt="Startup"
+            initial={{ opacity: 0 }}
+            whileInView={{
+                opacity: 1,
+                transition: {
+                    duration: 0.8,
+                },
+            }}
+            viewport={{ once: true, amount: 0.8 }}
+        />
     </Container>
 );
 export default AboutMe;

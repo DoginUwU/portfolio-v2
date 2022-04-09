@@ -12,7 +12,7 @@ const theme: DefaultTheme = {
             600: '#d0d0d0',
         },
         semantic: {
-            blue: '#0066ff',
+            blue: '#003f8c',
         },
     },
     breakpoints: {

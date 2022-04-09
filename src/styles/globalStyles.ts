@@ -27,6 +27,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
         background: ${({ theme }) => theme.colors.background};
         color: ${({ theme }) => theme.colors.white};
+        overflow-x: hidden;
     }
 
     button {
