@@ -3,26 +3,38 @@ import { changeText } from './helper';
 
 import { Container } from './styles';
 
-const Loading: React.FC = () => {
+interface LoadingProps {
+    children: React.ReactElement<any, any>;
+}
+
+const Loading: React.FC<LoadingProps> = ({ children }) => {
     const [loadingText, setLoadingText] = useState('');
+    const [loaded, setLoaded] = useState(false);
 
     const updateLoadingText = () => {
         changeText(setLoadingText).then(() => {
             setTimeout(() => {
                 updateLoadingText();
-            }, 1000);
+            }, 800);
         });
     };
 
     useEffect(() => {
         updateLoadingText();
+
+        setTimeout(() => {
+            setLoaded(true);
+        }, 6000);
     }, []);
 
-    return (
-        <Container>
-            <div dangerouslySetInnerHTML={{ __html: loadingText }} />
-        </Container>
-    );
+    if (!loaded)
+        return (
+            <Container>
+                <div dangerouslySetInnerHTML={{ __html: loadingText }} />
+            </Container>
+        );
+
+    return children;
 };
 
 export default Loading;

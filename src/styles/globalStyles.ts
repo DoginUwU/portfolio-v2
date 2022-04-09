@@ -12,8 +12,21 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family:'Poppins', sans-serif;
-        background:#212121;
+        font-family: 'Poppins', sans-serif;
+        background: ${({ theme }) => theme.colors.background};
+        color: ${({ theme }) => theme.colors.white};
+    }
+
+    #root {
+        padding-left: 90px;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+            padding-left: 0;
+        }
+    }
+
+    button {
+        cursor: pointer;
     }
 `;
 

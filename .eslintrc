@@ -29,19 +29,6 @@
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",
         "react/require-default-props": "off",
-        "@typescript-eslint/naming-convention": [
-            "error",
-            {
-                "selector": "interface",
-                "format": [
-                    "PascalCase"
-                ],
-                "custom": {
-                    "regex": "^I[A-Z]",
-                    "match": true
-                }
-            }
-        ],
         "prettier/prettier": [
             "error",
             {
