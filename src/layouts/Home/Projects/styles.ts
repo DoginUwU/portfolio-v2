@@ -4,6 +4,7 @@ import BaseContainer from '../../../components/BaseContainer';
 
 interface ProjectProps {
     active?: boolean;
+    isFirst?: boolean;
 }
 
 const Container = styled.div`
@@ -49,12 +50,12 @@ const Project = styled.div<ProjectProps>`
     overflow: hidden;
     position: relative;
 
-    ${({ active }) =>
+    ${({ active, isFirst }) =>
         active &&
         css`
             opacity: 1;
-            transform: scale(1.2);
-            border-radius: 12px;
+            transform: ${isFirst ? 'scale(1)' : 'scale(1.2)'};
+            border-radius: ${isFirst ? '0' : '12px'};
             z-index: 10;
             cursor: pointer;
         `};

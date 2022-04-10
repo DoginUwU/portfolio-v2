@@ -7,7 +7,7 @@ import { Content } from './styles';
 
 interface CarouselProps {
     itemsCount: number;
-    children: (activeIndex: number) => React.ReactNode;
+    children: (activeIndex: number) => React.ReactNode[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
             return itemsCount - 1;
         }
         if (index > itemsCount - 1) {
-            return 1;
+            return 0;
         }
         return index;
     };
@@ -52,12 +52,12 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
             <div
                 className="inner"
                 style={{
-                    transform: `translateX(-${translateX}%)`,
+                    transform: `translateX(-${translateX > 0 ? translateX : 0}%)`,
                 }}
             >
                 {children(activeIndex)}
             </div>
-            {activeIndex !== 1 && (
+            {activeIndex !== 0 && (
                 <button type="button" className="button prev" onClick={() => updateIndex(activeIndex - 1)}>
                     <Icon icon="ant-design:left-outlined" />
                 </button>

@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
             <Carousel itemsCount={projects.length}>
                 {(activeIndex) =>
                     projects.map((project, index) => (
-                        <Project key={project.slug} active={index === activeIndex}>
+                        <Project key={project.slug} active={index === activeIndex} isFirst={index === 0}>
                             <img src={project.cover} alt={project.title} />
                             <div>
                                 <h1>{project.title}</h1>
