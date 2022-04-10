@@ -10,7 +10,11 @@ import { theme } from './styles/theme';
 const App = () => (
     <ProjectsProvider>
         <ThemeProvider theme={theme}>
-            <Toaster />
+            <Toaster
+                containerStyle={{
+                    marginTop: '80px',
+                }}
+            />
             <GlobalStyles />
             <AnimatePresence />
             <Loading>

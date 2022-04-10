@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Project as IProject } from '../../@types/project';
 import { getProjectBySlug } from '../../network/lib/project';
 
-import { Container, Header } from './styles';
+import { Container, Header, Title } from './styles';
 
 const Project: React.FC = () => {
     const { slug } = useParams();
@@ -21,7 +21,12 @@ const Project: React.FC = () => {
 
     return (
         <Container>
-            <Header backgroundImage={project.cover} />
+            <Header backgroundImage={project.cover}>
+                <Title>
+                    <h1>{project.title}</h1>
+                    <p>{project.subtitle}</p>
+                </Title>
+            </Header>
         </Container>
     );
 };

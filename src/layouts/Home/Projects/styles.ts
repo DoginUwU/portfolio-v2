@@ -13,7 +13,6 @@ const Container = styled.div`
     padding: 40px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 64px;
 `;
 
 const Header = styled(BaseContainer)`
@@ -22,6 +21,7 @@ const Header = styled(BaseContainer)`
     justify-content: flex-start;
     align-items: flex-start;
     gap: 32px;
+    margin-bottom: 64px;
 
     div {
         width: 100%;
