@@ -2,10 +2,12 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 import Button from '../../../components/Button';
 import Carousel from '../../../components/Carousel';
+import { useProjects } from '../../../context/ProjectsContext';
 
 import { Container, Header, Project } from './styles';
 
 const Projects: React.FC = () => {
+    const { projects } = useProjects();
     const theme = useTheme();
 
     return (
@@ -19,14 +21,14 @@ const Projects: React.FC = () => {
                     </Button>
                 </div>
             </Header>
-            <Carousel itemsCount={20}>
+            <Carousel itemsCount={projects.length}>
                 {(activeIndex) =>
-                    Array.from({ length: 20 }).map((_, index) => (
-                        <Project key={index} active={index === activeIndex}>
-                            <img src="/assets/Rectify 11 Black.jpg" alt="" />
+                    projects.map((project, index) => (
+                        <Project key={project.slug} active={index === activeIndex}>
+                            <img src={project.cover} alt={project.title} />
                             <div>
-                                <h1>Rectify</h1>
-                                <p>Uma simples aplicação do windows :p</p>
+                                <h1>{project.title}</h1>
+                                <p>{project.subtitle}</p>
                             </div>
                         </Project>
                     ))
