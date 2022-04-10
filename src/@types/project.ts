@@ -20,17 +20,7 @@ interface ProjectGetParams {
         createdAt: string;
         updatedAt: string;
         publishedAt: string;
-        cover: {
-            data: {
-                attributes: {
-                    formats: {
-                        large: {
-                            url: string;
-                        };
-                    };
-                };
-            };
-        };
+        cover: string;
     };
 }
 
@@ -38,4 +28,4 @@ interface ProjectsGetParams {
     data: ProjectGetParams[];
 }
 
-export type { Project, ProjectsGetParams };
+export type { Project, ProjectGetParams, ProjectsGetParams };

@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { Project, ProjectsGetParams } from '../@types/project';
+import { getAllProjects } from '../network/lib/project';
 import { api } from '../services/axios';
 
 interface IProjectsContext {
@@ -16,25 +17,7 @@ const ProjectsProvider: React.FC<IProjectsContextProvider> = ({ children }) => {
     const [projects, setProjects] = useState<Project[]>([]);
 
     const getProjects = async () => {
-        const response = await api.get<ProjectsGetParams>('projects?populate=*');
-
-        const responseProjects: Project[] = response.data.data.map((project) => {
-            const { name, cover, createdAt, description, publishedAt, slug, subtitle, updatedAt } = project.attributes;
-
-            return {
-                id: project.id,
-                title: name,
-                subtitle,
-                description,
-                slug,
-                cover: cover.data.attributes.formats.large.url,
-                createdAt: new Date(createdAt),
-                updatedAt: new Date(updatedAt),
-                publishedAt: new Date(publishedAt),
-            };
-        });
-
-        setProjects(responseProjects);
+        setProjects(await getAllProjects());
     };
 
     useEffect(() => {

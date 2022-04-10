@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from 'styled-components';
 import Loading from './components/Loading';
 import { ProjectsProvider } from './context/ProjectsContext';
-import Home from './pages/Home';
+import Router from './routers';
 import { GlobalStyles } from './styles/globalStyles';
 import { theme } from './styles/theme';
 
@@ -14,7 +14,7 @@ const App = () => (
             <GlobalStyles />
             <AnimatePresence />
             <Loading>
-                <Home />
+                <Router />
             </Loading>
         </ThemeProvider>
     </ProjectsProvider>
