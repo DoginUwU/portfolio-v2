@@ -47,6 +47,8 @@ const AboutMe: React.FC = () => {
                     },
                 }}
                 viewport={{ once: true, amount: 0.8 }}
+                width="330px"
+                height="337px"
             />
         </Container>
     );
