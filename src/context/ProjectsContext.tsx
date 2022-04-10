@@ -6,9 +6,13 @@ interface IProjectsContext {
     projects: Project[];
 }
 
+interface IProjectsContextProvider {
+    children: React.ReactNode;
+}
+
 const ProjectsContext = createContext<IProjectsContext>({} as IProjectsContext);
 
-const ProjectsProvider: React.FC = ({ children }) => {
+const ProjectsProvider: React.FC<IProjectsContextProvider> = ({ children }) => {
     const [projects, setProjects] = useState<Project[]>([]);
 
     const getProjects = async () => {
