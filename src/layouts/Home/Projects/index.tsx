@@ -30,19 +30,21 @@ const Projects: React.FC = () => {
                     </Button>
                 </div>
             </Header>
-            <Carousel itemsCount={projects.length}>
-                {(activeIndex) =>
-                    projects.map((project, index) => (
-                        <Project key={project.slug} active={index === activeIndex} isFirst={index === 0}>
-                            <img src={project.cover} alt={project.title} />
-                            <div>
-                                <h1>{project.title}</h1>
-                                <p>{project.subtitle}</p>
-                            </div>
-                        </Project>
-                    ))
-                }
-            </Carousel>
+            {!!projects.length && (
+                <Carousel itemsCount={projects.length}>
+                    {(activeIndex) =>
+                        projects.map((project, index) => (
+                            <Project key={project.slug} active={index === activeIndex} isFirst={index === 0}>
+                                <img src={project.cover} alt={project.title} />
+                                <div>
+                                    <h1>{project.title}</h1>
+                                    <p>{project.subtitle}</p>
+                                </div>
+                            </Project>
+                        ))
+                    }
+                </Carousel>
+            )}
         </Container>
     );
 };
