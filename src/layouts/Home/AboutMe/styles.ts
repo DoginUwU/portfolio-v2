@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import BaseContainer from '../../../components/BaseContainer';
 
@@ -20,7 +21,7 @@ const Container = styled(BaseContainer)`
     }
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
     max-width: 600px;
     display: flex;
     flex-direction: column;

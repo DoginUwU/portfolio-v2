@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import BaseContainer from '../../../components/BaseContainer';
 
@@ -24,7 +25,7 @@ const Content = styled.div`
     align-items: center;
 `;
 
-const Left = styled.div`
+const Left = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +99,7 @@ const Right = styled.div`
     }
 `;
 
-const Cards = styled.div`
+const Cards = styled(motion.div)`
     width: 100%;
     display: flex;
     flex-direction: row;

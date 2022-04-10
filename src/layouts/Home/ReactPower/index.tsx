@@ -27,7 +27,7 @@ const ReactPower: React.FC = () => (
             </CheckedLabel>
             <CheckedLabel>
                 <Icon icon="bi:check-circle" />
-                Entendimento de comunicação com back-end tanto restfull quanto GraphQL
+                Entendimento de comunicação com back-end tanto RestFull quanto GraphQL
             </CheckedLabel>
         </Content>
     </Container>

@@ -28,13 +28,13 @@ const Contact: React.FC = () => (
                 </Card>
             </Cards>
             <Footer>
-                <a href="/" target="_blank">
+                <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer">
                     <Icon icon="akar-icons:github-fill" />
                 </a>
-                <a href="/" target="_blank">
+                <a href="https://www.linkedin.com/in/luiz-gotardo/" target="_blank" rel="noreferrer">
                     <Icon icon="akar-icons:linkedin-fill" />
                 </a>
-                <a href="/" target="_blank">
+                <a href="https://discord.com/users/656129876092518400" target="_blank" rel="noreferrer">
                     <Icon icon="akar-icons:discord-fill" />
                 </a>
             </Footer>

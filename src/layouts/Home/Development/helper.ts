@@ -1,3 +1,5 @@
+import { Variants } from 'framer-motion';
+
 interface Item {
     title: string;
     icon: string;
@@ -9,6 +11,32 @@ interface ITopic {
     subtitle?: string;
     items: Item[];
 }
+
+const variants: Variants = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 50,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+        },
+    },
+};
 
 const TOPICS: ITopic[] = [
     {
@@ -122,4 +150,4 @@ const TOPICS: ITopic[] = [
     },
 ];
 
-export { TOPICS };
+export { TOPICS, variants, itemVariants };

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import BaseContainer from '../../../components/BaseContainer';
 
@@ -11,7 +12,7 @@ const Container = styled(BaseContainer)`
     gap: 32px;
 `;
 
-const Topic = styled.div`
+const Topic = styled(motion.div)`
     width: 100%;
     display: flex;
     flex-direction: row;
