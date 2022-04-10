@@ -13,7 +13,7 @@ const Container = styled(BaseContainer)`
         max-width: 330px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         & > img {
             display: none;
         }

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import BaseContainer from '../../../components/BaseContainer';
 
 const Container = styled(BaseContainer)`
-    width: 100%;
     background: ${({ theme }) => theme.colors.black};
     padding: 64px;
     border-radius: 8px;

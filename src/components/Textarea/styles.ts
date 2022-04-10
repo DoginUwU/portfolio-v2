@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.input`
+const Container = styled.textarea`
     width: 100%;
     padding: 16px;
     border-radius: 8px;

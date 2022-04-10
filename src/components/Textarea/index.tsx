@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string | React.ReactNode;
 }
 
-const Input: React.FC<InputProps> = ({ label, ...rest }) => (
+const Textarea: React.FC<TextareaProps> = ({ label, ...rest }) => (
     <label
         htmlFor={rest.id}
         style={{
@@ -14,8 +14,8 @@ const Input: React.FC<InputProps> = ({ label, ...rest }) => (
         }}
     >
         {label}
-        <Container type="text" {...rest} />
+        <Container {...rest} />
     </label>
 );
 
-export default Input;
+export default Textarea;
