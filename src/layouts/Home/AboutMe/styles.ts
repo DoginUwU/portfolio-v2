@@ -33,6 +33,10 @@ const Content = styled.div`
         color: ${({ theme }) => theme.colors.gray[600]};
     }
 
+    button {
+        margin-top: 24px;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         max-width: 100%;
     }

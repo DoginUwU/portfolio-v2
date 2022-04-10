@@ -23,10 +23,7 @@ const Projects: React.FC = () => {
                 {(activeIndex) =>
                     Array.from({ length: 20 }).map((_, index) => (
                         <Project key={index} active={index === activeIndex}>
-                            <img
-                                src="https://images.prismic.io/gotardo/58f0ff44-44cd-475d-b280-5060088d7c66_site.png?auto=compress,format"
-                                alt=""
-                            />
+                            <img src="/assets/Rectify 11 Black.jpg" alt="" />
                             <div>
                                 <h1>Rectify</h1>
                                 <p>Uma simples aplicação do windows :p</p>

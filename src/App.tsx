@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import Loading from './components/Loading';
 import Home from './pages/Home';
@@ -8,6 +8,7 @@ import { theme } from './styles/theme';
 const App = () => (
     <ThemeProvider theme={theme}>
         <GlobalStyles />
+        <AnimatePresence />
         <Loading>
             <Home />
         </Loading>

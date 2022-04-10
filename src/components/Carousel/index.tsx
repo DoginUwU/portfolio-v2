@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'styled-components';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
@@ -11,6 +11,7 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
+    const [stopAutoCarousel, setStopAutoCarousel] = useState(false);
     const theme = useTheme();
     const { width } = useWindowDimensions();
     const isMobile = width <= Number(theme.breakpoints.sm.replace('px', ''));
@@ -29,15 +30,22 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
 
     const updateIndex = (index: number) => {
         setActiveIndex(checkIndex(index));
+        setStopAutoCarousel(true);
+        setTimeout(() => {
+            setStopAutoCarousel(false);
+        }, 5000);
     };
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setActiveIndex((index) => checkIndex(index + 1));
-    //     }, 5000);
+    useEffect(() => {
+        let interval = 0;
 
-    //     return () => clearInterval(interval);
-    // }, []);
+        if (!stopAutoCarousel)
+            interval = setInterval(() => {
+                setActiveIndex((index) => checkIndex(index + 1));
+            }, 5000);
+
+        return () => clearInterval(interval);
+    }, [stopAutoCarousel]);
 
     return (
         <Content>

@@ -70,7 +70,7 @@ const Project = styled.div<ProjectProps>`
         position: absolute;
         bottom: 0;
         left: 0;
-        background: ${({ theme }) => Color(theme.colors.semantic.blue).alpha(0.5).string()};
+        background: ${({ theme }) => Color(theme.colors.black).alpha(0.5).string()};
         padding: 16px;
         transition: all 0.2s ease-in-out;
         opacity: ${({ active }) => (active ? 1 : 0)};

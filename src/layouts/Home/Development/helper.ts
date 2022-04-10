@@ -18,6 +18,7 @@ const TOPICS: ITopic[] = [
             {
                 title: 'VS Code',
                 icon: 'akar-icons:vscode-fill',
+                color: '#0066b8',
             },
             {
                 title: 'Insomnia',
@@ -71,10 +72,12 @@ const TOPICS: ITopic[] = [
             {
                 title: 'React',
                 icon: 'akar-icons:react-fill',
+                color: '#61DAFB',
             },
             {
                 title: 'React Native',
                 icon: 'akar-icons:react-fill',
+                color: '#61DAFB',
             },
             {
                 title: 'Node',
@@ -93,6 +96,7 @@ const TOPICS: ITopic[] = [
             {
                 title: 'TypeScript',
                 icon: 'file-icons:typescript',
+                color: '#3178c6',
             },
             {
                 title: 'Tailwind',

@@ -13,6 +13,7 @@ const theme: DefaultTheme = {
         },
         semantic: {
             blue: '#003f8c',
+            lightBlue: '#428aff',
         },
     },
     breakpoints: {

@@ -15,6 +15,7 @@ declare module 'styled-components' {
             };
             semantic: {
                 blue: string;
+                lightBlue: string;
             };
         };
         breakpoints: {

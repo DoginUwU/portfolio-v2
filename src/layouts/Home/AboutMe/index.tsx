@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import Button from '../../../components/Button';
 import Title from '../../../components/Title';
 
 import { Container, Content } from './styles';
@@ -19,6 +20,9 @@ const AboutMe: React.FC = () => (
                 de orientação com o conhecimento adquirido em minha jornada até agora.
             </p>
             <p>Desafios são sempre bem-vindos. é necessário melhorar.</p>
+            <a href="/luiz-eduardo-gotardo-cv.pdf" download>
+                <Button>Baixar CV</Button>
+            </a>
         </Content>
         <motion.img
             src="/assets/startup.svg"
