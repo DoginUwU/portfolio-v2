@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
             <Header>
                 <h1>Projetos</h1>
                 <div>
-                    <p>Todos meus projetos importantes</p>
+                    <p>Todos meus projetos estão aqui e no github, que tal dar uma olhada?</p>
                     <Button color={theme.colors.white} textColor={theme.colors.semantic.blue}>
                         Ver todos
                     </Button>

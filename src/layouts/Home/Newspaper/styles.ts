@@ -12,10 +12,11 @@ const Container = styled(BaseContainer)`
     align-items: center;
     gap: 12px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         flex-direction: column;
         gap: 32px;
         border-radius: 0px;
+        padding: 32px;
     }
 `;
 
@@ -48,6 +49,7 @@ const Right = styled.div`
         width: 100%;
         justify-content: center;
 
+        label,
         input {
             width: 100%;
             max-width: 300px;
