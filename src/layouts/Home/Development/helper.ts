@@ -120,6 +120,7 @@ const TOPICS: ITopic[] = [
             {
                 title: 'GraphQL',
                 icon: 'file-icons:graphql',
+                color: '#e10098',
             },
             {
                 title: 'TypeScript',

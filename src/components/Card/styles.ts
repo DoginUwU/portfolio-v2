@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 interface ContainerProps {
     color?: string;
+    pressable?: boolean;
 }
 
 const Container = styled(motion.div)<ContainerProps>`
@@ -15,6 +16,8 @@ const Container = styled(motion.div)<ContainerProps>`
     align-items: center;
     gap: 12px;
     transition: background 0.2s ease-in-out;
+    color: ${({ theme }) => theme.colors.white};
+    cursor: ${({ pressable }) => (pressable ? 'pointer' : 'default')};
 
     & div {
         background: ${({ theme, color }) => color ?? theme.colors.semantic.blue};

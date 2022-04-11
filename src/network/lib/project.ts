@@ -3,18 +3,15 @@ import { Project, ProjectsGetParams, ProjectGetParams } from '../../@types/proje
 import { api } from '../../services/axios';
 
 const convertStrapiProjectToProject = (project: ProjectGetParams): Project => {
-    const { name, cover, description, subtitle, slug, createdAt, publishedAt, updatedAt } = project.attributes;
+    const { name, createdAt, publishedAt, updatedAt, ...rest } = project.attributes;
 
     return {
         id: project.id,
         title: name,
-        subtitle,
-        description,
-        slug,
-        cover,
         createdAt: new Date(createdAt),
         updatedAt: new Date(updatedAt),
         publishedAt: new Date(publishedAt),
+        ...rest,
     };
 };
 

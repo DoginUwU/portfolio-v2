@@ -8,10 +8,11 @@ interface CardProps extends HTMLMotionProps<'div'> {
     title: string;
     icon: string | IconifyIcon;
     color?: string;
+    pressable?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ title, icon, color, ...rest }) => (
-    <Container color={color} whileHover={{ translateY: -5 }} {...rest}>
+const Card: React.FC<CardProps> = ({ title, icon, color, pressable, ...rest }) => (
+    <Container color={color} whileHover={{ translateY: pressable ? 0 : -5 }} {...rest}>
         <div>
             <Icon icon={icon} />
         </div>

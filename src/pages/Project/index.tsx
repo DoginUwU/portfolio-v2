@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import { useParams } from 'react-router-dom';
 import { Project as IProject } from '../../@types/project';
 import { getProjectBySlug } from '../../network/lib/project';
 
+import About from '../../layouts/Project/About';
 import { Container, Header, Loading, Title } from './styles';
 
 const Project: React.FC = () => {
@@ -33,6 +34,7 @@ const Project: React.FC = () => {
                     <p>{project.subtitle}</p>
                 </Title>
             </Header>
+            <About project={project} />
         </Container>
     );
 };
