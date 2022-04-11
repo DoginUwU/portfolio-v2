@@ -33,6 +33,12 @@ const Container = styled(BaseContainer)`
     a {
         color: ${({ theme }) => theme.colors.semantic.lightBlue};
     }
+
+    img {
+        max-width: 100%;
+        border-radius: 4px;
+        margin: 16px 0;
+    }
 `;
 
 const Cards = styled.div`
