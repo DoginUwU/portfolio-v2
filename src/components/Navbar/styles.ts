@@ -27,6 +27,7 @@ const Container = styled(BaseContainer)`
     a {
         display: flex;
         align-items: center;
+        text-decoration: none;
     }
 
     img {

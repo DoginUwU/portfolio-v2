@@ -1,20 +1,39 @@
 import { Icon } from '@iconify/react';
-import React, { FormEvent } from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import Button from '../../../components/Button';
 import Input from '../../../components/Input';
 import Textarea from '../../../components/Textarea';
+import { Mail } from '../../../services/mail';
 
 import { Card, Cards, Container, Content, Footer, Form, Header } from './styles';
 
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
 const Contact: React.FC = () => {
-    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-        e.preventDefault();
-        toast.error('Indisponível no momento.');
+    const [loading, setLoading] = useState(false);
+    const { register, handleSubmit, reset } = useForm<FormData>();
+
+    const onSubmit = async (data: FormData): Promise<void> => {
+        setLoading(true);
+        await Mail.getInstance().send({
+            from_name: data.name,
+            reply_to: data.email,
+            message: data.message,
+        });
+
+        toast.success('Mensagem enviada com sucesso!');
+        reset();
+        setLoading(false);
     };
 
     return (
-        <Container>
+        <Container id="contact">
             <Content>
                 <Header>
                     <h1>Entre em contato</h1>
@@ -46,11 +65,13 @@ const Contact: React.FC = () => {
                     </a>
                 </Footer>
             </Content>
-            <Form onSubmit={handleSubmit}>
-                <Input label="Seu nome" placeholder="Seu nome" />
-                <Input label="Email" placeholder="Email" />
-                <Textarea label="Mensagem" placeholder="Mensagem" />
-                <Button type="submit">Enviar</Button>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+                <Input {...register('name', { required: true })} label="Seu nome" placeholder="Seu nome" />
+                <Input {...register('email', { required: true })} label="Email" placeholder="Email" />
+                <Textarea {...register('message', { required: true })} label="Mensagem" placeholder="Mensagem" />
+                <Button type="submit" loading={loading}>
+                    Enviar
+                </Button>
             </Form>
         </Container>
     );

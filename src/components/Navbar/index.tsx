@@ -25,9 +25,11 @@ const Navbar: React.FC = () => {
                         </LinkNavigation>
                     ))}
                 </Content>
-                <Button color={theme.colors.white} textColor={theme.colors.black}>
-                    Contato
-                </Button>
+                <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer">
+                    <Button color={theme.colors.white} textColor={theme.colors.black}>
+                        Github
+                    </Button>
+                </a>
             </Container>
         </NavbarContainer>
     );

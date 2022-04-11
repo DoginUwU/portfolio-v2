@@ -5,6 +5,7 @@ interface ContainerProps {
     blur?: boolean;
     color?: string;
     textColor?: string;
+    loading?: boolean;
 }
 
 const Container = styled(motion.button)<ContainerProps>`
@@ -15,6 +16,8 @@ const Container = styled(motion.button)<ContainerProps>`
     font-size: 1.1rem;
     padding: 16px 32px;
     transition: opacity 0.2s ease-in-out;
+    opacity: ${({ loading }) => (loading ? 0.5 : 1)};
+    cursor: ${({ loading }) => (loading ? 'not-allowed' : 'pointer')};
 
     ${({ blur, theme, color }) =>
         blur &&
@@ -23,7 +26,7 @@ const Container = styled(motion.button)<ContainerProps>`
         `}
 
     &:hover {
-        opacity: 0.9;
+        opacity: ${({ loading }) => (loading ? 0.5 : 0.9)};
     }
 `;
 

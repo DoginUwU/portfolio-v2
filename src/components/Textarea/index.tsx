@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { Container } from './styles';
 
@@ -6,7 +6,7 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
     label?: string | React.ReactNode;
 }
 
-const Textarea: React.FC<TextareaProps> = ({ label, ...rest }) => (
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ label, ...rest }, ref) => (
     <label
         htmlFor={rest.id}
         style={{
@@ -14,8 +14,8 @@ const Textarea: React.FC<TextareaProps> = ({ label, ...rest }) => (
         }}
     >
         {label}
-        <Container {...rest} />
+        <Container ref={ref} {...rest} />
     </label>
-);
+));
 
 export default Textarea;
