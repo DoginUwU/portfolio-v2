@@ -5,6 +5,14 @@ interface HeaderProps {
     backgroundImage: string;
 }
 
+const Loading = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Container = styled.div``;
 
 const Header = styled.section<HeaderProps>`
@@ -45,4 +53,4 @@ const Title = styled(BaseContainer)`
     }
 `;
 
-export { Container, Header, Title };
+export { Container, Header, Title, Loading };

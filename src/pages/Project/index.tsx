@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import { Project as IProject } from '../../@types/project';
 import { getProjectBySlug } from '../../network/lib/project';
 
-import { Container, Header, Title } from './styles';
+import { Container, Header, Loading, Title } from './styles';
 
 const Project: React.FC = () => {
     const { slug } = useParams();
@@ -17,7 +18,12 @@ const Project: React.FC = () => {
         handleProject();
     }, []);
 
-    if (!project) return <div>Carregando...</div>;
+    if (!project)
+        return (
+            <Loading>
+                <ReactLoading type="spin" />
+            </Loading>
+        );
 
     return (
         <Container>
