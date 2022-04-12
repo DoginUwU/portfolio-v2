@@ -23,7 +23,7 @@ const Hero: React.FC = () => (
                 </Link>
             </Left>
             <Right>
-                <img src="assets/rectangle_1.svg" alt="Me" />
+                <img src="assets/eu.png" alt="Me" />
             </Right>
         </Content>
         <Cards variants={variants} initial="hidden" animate="show">

@@ -22,9 +22,9 @@ const AboutMe: React.FC = () => {
             <Content variants={variants} initial="hidden" animate={controls} ref={ref}>
                 <Title title="Sobre mim" subtitle="Melhor qualidade para você" />
                 <motion.p variants={itemVariants}>
-                    Olá, sou o Luiz, um apaixonado desenvolvedor web especializado em front end que além disso, trabalha
-                    como freelancer no Brasil. Minha paixão por software vem de sonhar com criativas ideias e
-                    transformá-las em realidade por meio de interfaces funcionais e elegantes.
+                    Olá, sou o Luiz, tenho 17 anos e sou um apaixonado desenvolvedor web especializado em front end que
+                    além disso, trabalha como freelancer no Brasil. Minha paixão por software vem de sonhar com
+                    criativas ideias e transformá-las em realidade por meio de interfaces funcionais e elegantes.
                 </motion.p>
                 <motion.p variants={itemVariants}>
                     Procuro sempre me dedicar ao máximo na criação de qualidade produtos com alta fidelidade de acordo
