@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
-import { Project, ProjectsGetParams } from '../@types/project';
+import { Project } from '../@types/project';
 import { getAllProjects } from '../network/lib/project';
-import { api } from '../services/axios';
 
 interface IProjectsContext {
     projects: Project[];

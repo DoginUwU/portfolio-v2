@@ -1,5 +1,8 @@
 /* eslint-disable no-plusplus */
 import React from 'react';
+import { getRandomFloatInclusive, getRandomIntInclusive } from '../../utils/number';
+
+const { crypto } = window;
 
 const phrases = ['Seja bem-vindo', 'Estamos carregando o site', 'Só mais um momento...'];
 let counter = 0;
@@ -28,8 +31,14 @@ class TextScramble {
     constructor() {
         this.chars = '!<>-_\\/[]{}—=+*^?#________';
         this.update = this.update.bind(this);
-        this.resolve = () => {};
-        this.setOutput = () => {};
+        this.resolve = () => {
+            this.frameRequest = 0;
+            this.queue = [];
+        };
+        this.setOutput = () => {
+            this.frameRequest = 0;
+            this.queue = [];
+        };
     }
 
     setText(oldText: string, setOutput: React.Dispatch<React.SetStateAction<string>>) {
@@ -46,8 +55,8 @@ class TextScramble {
             const from = oldText[i] || '';
             const to = newText[i] || '';
 
-            const start = Math.floor(Math.random() * 40);
-            const end = start + Math.floor(Math.random() * 40);
+            const start = Math.floor(getRandomIntInclusive(0, 40));
+            const end = start + Math.floor(getRandomIntInclusive(0, 40));
 
             this.queue.push({ from, to, start, end });
         }
@@ -70,7 +79,7 @@ class TextScramble {
                 complete++;
                 output += to;
             } else if (this.frame >= start) {
-                if (!char || Math.random() < 0.28) {
+                if (!char || getRandomFloatInclusive(0, 1) < 0.28) {
                     this.queue[i].char = this.randomChar();
                 }
 
@@ -91,7 +100,7 @@ class TextScramble {
     }
 
     randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
+        return this.chars[Math.floor(getRandomFloatInclusive(0, 1) * this.chars.length)];
     }
 }
 

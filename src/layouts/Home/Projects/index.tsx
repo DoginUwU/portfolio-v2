@@ -1,5 +1,4 @@
 import React from 'react';
-import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import Button from '../../../components/Button';
