@@ -98,4 +98,9 @@ const Project = styled.div<ProjectProps>`
     }
 `;
 
-export { Container, Header, Project };
+const Loading = styled.div`
+    margin: 0 auto;
+    padding-bottom: 40px;
+`;
+
+export { Container, Header, Project, Loading };

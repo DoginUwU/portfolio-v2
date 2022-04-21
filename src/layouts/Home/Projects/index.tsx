@@ -1,11 +1,12 @@
 import React from 'react';
+import ReactLoading from 'react-loading';
 import { Link } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import Button from '../../../components/Button';
 import Carousel from '../../../components/Carousel';
 import { useProjects } from '../../../context/ProjectsContext';
 
-import { Container, Header, Project } from './styles';
+import { Container, Header, Loading, Project } from './styles';
 
 const Projects: React.FC = () => {
     const { projects } = useProjects();
@@ -24,7 +25,7 @@ const Projects: React.FC = () => {
                     </Link>
                 </div>
             </Header>
-            {!!projects.length && (
+            {projects.length ? (
                 <Carousel itemsCount={projects.length}>
                     {(activeIndex) =>
                         projects.map((project, index) => (
@@ -38,6 +39,10 @@ const Projects: React.FC = () => {
                         ))
                     }
                 </Carousel>
+            ) : (
+                <Loading>
+                    <ReactLoading type="spin" />
+                </Loading>
             )}
         </Container>
     );

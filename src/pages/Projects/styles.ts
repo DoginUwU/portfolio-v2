@@ -26,6 +26,7 @@ const Container = styled(BaseContainer)`
 `;
 
 const Content = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -78,4 +79,11 @@ const Project = styled(Link)`
     }
 `;
 
-export { Container, Content, Project };
+const Loading = styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
+
+export { Container, Content, Project, Loading };
