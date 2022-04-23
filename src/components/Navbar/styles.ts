@@ -58,4 +58,13 @@ const LinkNavigation = styled(Link)<LinkNavigationProps>`
     }
 `;
 
-export { Container, Content, NavbarContainer, LinkNavigation };
+const LinkNavigationTarget = styled.a<LinkNavigationProps>`
+    text-decoration: none;
+    color: ${({ active, theme }) => (active ? theme.colors.white : theme.colors.gray[600])};
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.white};
+    }
+`;
+
+export { Container, Content, NavbarContainer, LinkNavigation, LinkNavigationTarget };

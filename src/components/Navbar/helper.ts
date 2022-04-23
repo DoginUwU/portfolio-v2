@@ -11,6 +11,11 @@ const navigationItems = [
         name: 'Jogo',
         link: '/game',
     },
+    {
+        name: 'Blog',
+        link: 'https://blog-gotardo.vercel.app',
+        absolutLink: true,
+    },
 ];
 
 export { navigationItems };

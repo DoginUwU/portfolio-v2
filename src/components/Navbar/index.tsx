@@ -4,7 +4,7 @@ import { useTheme } from 'styled-components';
 import Button from '../Button';
 import { navigationItems } from './helper';
 
-import { Container, Content, LinkNavigation, NavbarContainer } from './styles';
+import { Container, Content, LinkNavigation, LinkNavigationTarget, NavbarContainer } from './styles';
 
 const Navbar: React.FC = () => {
     const theme = useTheme();
@@ -19,11 +19,17 @@ const Navbar: React.FC = () => {
                     <img src="/favicon.svg" alt="Website logo" width="42px" height="42px" />
                 </Link>
                 <Content>
-                    {navigationItems.map((item) => (
-                        <LinkNavigation to={item.link} active={checkActive(item.link)} key={item.name}>
-                            {item.name}
-                        </LinkNavigation>
-                    ))}
+                    {navigationItems.map((item) =>
+                        item.absolutLink ? (
+                            <LinkNavigationTarget href={item.link} key={item.name} target="_blank">
+                                {item.name}
+                            </LinkNavigationTarget>
+                        ) : (
+                            <LinkNavigation to={item.link} active={checkActive(item.link)} key={item.name}>
+                                {item.name}
+                            </LinkNavigation>
+                        ),
+                    )}
                 </Content>
                 <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer">
                     <Button color={theme.colors.white} textColor={theme.colors.black}>
