@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
                 <Content>
                     {navigationItems.map((item) =>
                         item.absolutLink ? (
-                            <LinkNavigationTarget href={item.link} key={item.name} target="_blank">
+                            <LinkNavigationTarget href={item.link} key={item.name}>
                                 {item.name}
                             </LinkNavigationTarget>
                         ) : (
