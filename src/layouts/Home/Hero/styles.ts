@@ -55,6 +55,7 @@ const Left = styled(motion.div)`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         max-width: 100%;
+        align-items: center;
 
         h1 {
             font-size: 3rem;

@@ -40,6 +40,8 @@ const Content = styled(motion.div)`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         max-width: 100%;
+        align-items: center;
+        text-align: center;
     }
 `;
 

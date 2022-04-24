@@ -57,7 +57,7 @@ const CheckedLabel = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
     }
 `;
 
