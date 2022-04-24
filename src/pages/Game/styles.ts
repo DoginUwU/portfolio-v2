@@ -5,4 +5,16 @@ const Container = styled.iframe`
     height: 100vh;
 `;
 
-export { Container };
+const Loading = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export { Container, Loading };
