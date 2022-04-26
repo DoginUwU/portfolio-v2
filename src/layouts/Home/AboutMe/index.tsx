@@ -31,7 +31,7 @@ const AboutMe: React.FC = () => {
                     com a proposta definida. Eu estou sempre disposto a aprender novas tecnologias, bem como ajudar quem
                     precisa de orientação com o conhecimento adquirido em minha jornada até agora.
                 </motion.p>
-                <motion.p variants={itemVariants}>Desafios são sempre bem-vindos. é necessário melhorar.</motion.p>
+                <motion.p variants={itemVariants}>Desafios são sempre bem-vindos. É necessário melhorar.</motion.p>
                 <motion.a variants={itemVariants} href="/luiz-eduardo-gotardo-cv.pdf" download>
                     <Button>Baixar CV</Button>
                 </motion.a>
