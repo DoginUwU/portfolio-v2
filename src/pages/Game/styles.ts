@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Container = styled.iframe`
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 `;
 
 const Loading = styled.div`
@@ -15,6 +16,7 @@ const Loading = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 `;
 
 export { Container, Loading };
