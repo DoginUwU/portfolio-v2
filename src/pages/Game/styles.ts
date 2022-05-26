@@ -4,6 +4,10 @@ const Container = styled.iframe`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+
+    & > .unity-container {
+        overflow: hidden;
+    }
 `;
 
 const Loading = styled.div`
