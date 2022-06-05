@@ -46,6 +46,10 @@ const GlobalStyles = createGlobalStyle`
         background: transparent;
         border-radius: 10px;
     }
+
+    #unity-container.unity-desktop {
+        overflow: hidden;
+    }
 `;
 
 export { GlobalStyles };
