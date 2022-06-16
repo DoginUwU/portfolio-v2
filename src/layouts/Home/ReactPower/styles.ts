@@ -23,15 +23,20 @@ const Header = styled.div`
     h1 {
         font-size: 2.5rem;
         font-weight: 500;
+        text-align: center;
     }
 
     p {
         max-width: 600px;
         color: ${({ theme }) => theme.colors.gray[600]};
+        text-align: center;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-        text-align: start;
+        h1,
+        p {
+            text-align: start;
+        }
     }
 `;
 
