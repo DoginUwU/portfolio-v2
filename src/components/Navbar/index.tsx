@@ -31,11 +31,7 @@ const Navbar: React.FC = () => {
                         ),
                     )}
                 </Content>
-                <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer">
-                    <Button color={theme.colors.white} textColor={theme.colors.black}>
-                        Github
-                    </Button>
-                </a>
+                <div />
             </Container>
         </NavbarContainer>
     );
