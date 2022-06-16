@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
+import Stars from '../../../components/Stars';
 
 import { CheckedLabel, Container, Content, Header } from './styles';
 
 const ReactPower: React.FC = () => (
     <Container>
+        <Stars />
         <Header>
             <h1>O poder do React. Agora em suas mãos</h1>
             <p>

@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import BaseContainer from '../../../components/BaseContainer';
 
 const Container = styled(BaseContainer)`
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 42px;
+    position: relative;
+    padding: 100px 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        padding: 50px 20px;
+    }
 `;
 
 const Header = styled.div`
@@ -18,13 +23,15 @@ const Header = styled.div`
     h1 {
         font-size: 2.5rem;
         font-weight: 500;
-        text-align: center;
     }
 
     p {
         max-width: 600px;
         color: ${({ theme }) => theme.colors.gray[600]};
-        text-align: center;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        text-align: start;
     }
 `;
 
@@ -58,6 +65,7 @@ const CheckedLabel = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         width: 100%;
         justify-content: center;
+        display: none;
     }
 `;
 
