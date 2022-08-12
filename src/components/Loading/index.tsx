@@ -1,40 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { changeText } from './helper';
+import React from 'react';
+import ReactLoading from 'react-loading';
 
 import { Container } from './styles';
 
-interface LoadingProps {
-    children: React.ReactElement<any, any>;
-}
-
-const Loading: React.FC<LoadingProps> = ({ children }) => {
-    const [loadingText, setLoadingText] = useState('');
-    const [loaded, setLoaded] = useState(false);
-
-    const updateLoadingText = () => {
-        changeText(setLoadingText).then(() => {
-            setTimeout(() => {
-                updateLoadingText();
-            }, 800);
-        });
-    };
-
-    useEffect(() => {
-        updateLoadingText();
-
-        setTimeout(() => {
-            setLoaded(true);
-        }, 6000);
-    }, []);
-
-    if (!loaded)
-        return (
-            <Container>
-                <div dangerouslySetInnerHTML={{ __html: loadingText }} />
-            </Container>
-        );
-
-    return children;
-};
+const Loading: React.FC = () => (
+    <Container>
+        <ReactLoading type="spin" />
+    </Container>
+);
 
 export default Loading;

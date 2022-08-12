@@ -58,11 +58,21 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
                 {children(activeIndex)}
             </div>
             {activeIndex !== 0 && (
-                <button type="button" className="button prev" onClick={() => updateIndex(activeIndex - 1)}>
+                <button
+                    aria-label="previous image"
+                    type="button"
+                    className="button prev"
+                    onClick={() => updateIndex(activeIndex - 1)}
+                >
                     <Icon icon="ant-design:left-outlined" />
                 </button>
             )}
-            <button type="button" className="button next" onClick={() => updateIndex(activeIndex + 1)}>
+            <button
+                aria-label="next image"
+                type="button"
+                className="button next"
+                onClick={() => updateIndex(activeIndex + 1)}
+            >
                 <Icon icon="ant-design:right-outlined" />
             </button>
         </Content>

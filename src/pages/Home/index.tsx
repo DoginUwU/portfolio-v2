@@ -1,13 +1,14 @@
 import React from 'react';
-import AboutMe from '../../layouts/Home/AboutMe';
-import Contact from '../../layouts/Home/Contact';
-import Development from '../../layouts/Home/Development';
-import Hero from '../../layouts/Home/Hero';
-import Newspaper from '../../layouts/Home/Newspaper';
-import Projects from '../../layouts/Home/Projects';
-import ReactPower from '../../layouts/Home/ReactPower';
 
 import { Container } from './styles';
+
+const Hero = React.lazy(() => import('../../layouts/Home/Hero'));
+const AboutMe = React.lazy(() => import('../../layouts/Home/AboutMe'));
+const Contact = React.lazy(() => import('../../layouts/Home/Contact'));
+const Development = React.lazy(() => import('../../layouts/Home/Development'));
+const Newspaper = React.lazy(() => import('../../layouts/Home/Newspaper'));
+const Projects = React.lazy(() => import('../../layouts/Home/Projects'));
+const ReactPower = React.lazy(() => import('../../layouts/Home/ReactPower'));
 
 const Home: React.FC = () => (
     <Container>

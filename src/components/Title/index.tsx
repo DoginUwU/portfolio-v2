@@ -12,7 +12,7 @@ const Title: React.FC<TitleProps> = ({ title, subtitle }) => (
         {subtitle && (
             <div>
                 <div className="block" />
-                <h4>{subtitle}</h4>
+                <h2>{subtitle}</h2>
             </div>
         )}
         <h1>{title}</h1>

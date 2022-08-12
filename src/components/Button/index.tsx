@@ -11,9 +11,9 @@ interface ButtonProps extends HTMLMotionProps<'button'> {
     loading?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
-    <Container whileTap={{ scale: rest.loading ? 1 : 0.95 }} disabled={rest.loading} {...rest}>
-        {rest.loading ? <ReactLoading type="spin" height={16} width={16} /> : children}
+const Button: React.FC<ButtonProps> = ({ children, loading, ...rest }) => (
+    <Container whileTap={{ scale: loading ? 1 : 0.95 }} disabled={loading || undefined} {...rest}>
+        {loading ? <ReactLoading type="spin" height={16} width={16} /> : children}
     </Container>
 );
 

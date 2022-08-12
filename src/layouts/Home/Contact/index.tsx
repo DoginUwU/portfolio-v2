@@ -54,13 +54,23 @@ const Contact: React.FC = () => {
                     </Card>
                 </Cards>
                 <Footer>
-                    <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/DoginUwU" target="_blank" rel="noreferrer" aria-label="Github profile">
                         <Icon icon="akar-icons:github-fill" />
                     </a>
-                    <a href="https://www.linkedin.com/in/luiz-gotardo/" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://www.linkedin.com/in/luiz-gotardo/"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Linkedin profile"
+                    >
                         <Icon icon="akar-icons:linkedin-fill" />
                     </a>
-                    <a href="https://discord.com/users/656129876092518400" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://discord.com/users/656129876092518400"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Discord profile"
+                    >
                         <Icon icon="akar-icons:discord-fill" />
                     </a>
                 </Footer>

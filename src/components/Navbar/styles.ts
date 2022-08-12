@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import BaseContainer from '../BaseContainer';
 
 interface LinkNavigationProps {
-    active?: boolean;
+    active?: number;
 }
 
 const NavbarContainer = styled.div`

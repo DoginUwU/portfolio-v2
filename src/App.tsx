@@ -1,6 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
+import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from 'styled-components';
+import Loading from './components/Loading';
 import { ProjectsProvider } from './context/ProjectsContext';
 import Router from './routers';
 import { GlobalStyles } from './styles/globalStyles';
@@ -16,7 +18,9 @@ const App = () => (
             />
             <GlobalStyles />
             <AnimatePresence />
-            <Router />
+            <Suspense fallback={<Loading />}>
+                <Router />
+            </Suspense>
         </ThemeProvider>
     </ProjectsProvider>
 );

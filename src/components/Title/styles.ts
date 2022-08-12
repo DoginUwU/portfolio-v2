@@ -21,7 +21,7 @@ const Container = styled.div`
             background: ${({ theme }) => theme.colors.semantic.blue};
         }
 
-        & > h4 {
+        & > h2 {
             font-size: 0.875rem;
             line-height: 16px;
             font-weight: 500;

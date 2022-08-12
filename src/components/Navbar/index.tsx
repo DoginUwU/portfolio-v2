@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from 'styled-components';
-import Button from '../Button';
 import { navigationItems } from './helper';
 
 import { Container, Content, LinkNavigation, LinkNavigationTarget, NavbarContainer } from './styles';
 
 const Navbar: React.FC = () => {
-    const theme = useTheme();
     const location = useLocation();
 
     const checkActive = (path: string) => location.pathname === path;
@@ -25,7 +22,11 @@ const Navbar: React.FC = () => {
                                 {item.name}
                             </LinkNavigationTarget>
                         ) : (
-                            <LinkNavigation to={item.link} active={checkActive(item.link)} key={item.name}>
+                            <LinkNavigation
+                                to={item.link}
+                                active={checkActive(item.link) ? 1 : undefined}
+                                key={item.name}
+                            >
                                 {item.name}
                             </LinkNavigation>
                         ),

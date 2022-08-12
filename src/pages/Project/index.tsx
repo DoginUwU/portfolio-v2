@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
 import { Project as IProject } from '../../@types/project';
+import Loading from '../../components/Loading';
 import { getProjectBySlug } from '../../network/lib/project';
 
-import About from '../../layouts/Project/About';
-import { Container, Header, Loading, Title } from './styles';
+import { Container, Header, Title } from './styles';
+
+const About = React.lazy(() => import('../../layouts/Project/About'));
 
 const Project: React.FC = () => {
     const { slug } = useParams();
@@ -19,12 +20,7 @@ const Project: React.FC = () => {
         handleProject();
     }, []);
 
-    if (!project)
-        return (
-            <Loading>
-                <ReactLoading type="spin" />
-            </Loading>
-        );
+    if (!project) return <Loading />;
 
     return (
         <Container>
