@@ -14,7 +14,7 @@ const Hero: React.FC = () => (
                 <motion.h1 variants={itemVariants}>
                     <span>Luiz Eduardo</span> Desenvolvedor Full-stack
                 </motion.h1>
-                <motion.p variants={itemVariants}>Um apaixonado desenvolvedor web front-end brasileiro.</motion.p>
+                <motion.p variants={itemVariants}>Um apaixonado desenvolvedor web brasileiro.</motion.p>
                 <Link to="/projects">
                     <Button type="button" blur variants={itemVariants}>
                         Meus projetos
