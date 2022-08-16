@@ -28,15 +28,22 @@ const Projects: React.FC = () => {
             {projects.length ? (
                 <Carousel itemsCount={projects.length}>
                     {(activeIndex) =>
-                        projects.map((project, index) => (
-                            <Project key={project.slug} active={index === activeIndex} isFirst={index === 0}>
-                                <img src={project.cover} alt={project.title} />
-                                <div>
-                                    <h1>{project.title}</h1>
-                                    <p>{project.subtitle}</p>
-                                </div>
-                            </Project>
-                        ))
+                        projects.map((project, index) => {
+                            const active = index === activeIndex;
+                            const link = active ? `/projects/${project.slug}` : '#';
+
+                            return (
+                                <Link key={project.slug} to={link}>
+                                    <Project active={active} isFirst={index === 0}>
+                                        <img src={project.cover} alt={project.title} />
+                                        <div>
+                                            <h1>{project.title}</h1>
+                                            <p>{project.subtitle}</p>
+                                        </div>
+                                    </Project>
+                                </Link>
+                            );
+                        })
                     }
                 </Carousel>
             ) : (

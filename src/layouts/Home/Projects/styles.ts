@@ -49,6 +49,9 @@ const Project = styled.div<ProjectProps>`
     transition: all 0.2s ease-in-out;
     overflow: hidden;
     position: relative;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.white};
+    cursor: default;
 
     ${({ active, isFirst }) =>
         active &&
