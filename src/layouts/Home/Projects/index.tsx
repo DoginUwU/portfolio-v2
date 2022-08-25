@@ -6,7 +6,7 @@ import Button from '../../../components/Button';
 import Carousel from '../../../components/Carousel';
 import { useProjects } from '../../../context/ProjectsContext';
 
-import { Container, Header, Loading, Project } from './styles';
+import { Container, Header, Project } from './styles';
 
 const Projects: React.FC = () => {
     const { projects } = useProjects();
@@ -25,32 +25,26 @@ const Projects: React.FC = () => {
                     </Link>
                 </div>
             </Header>
-            {projects.length ? (
-                <Carousel itemsCount={projects.length}>
-                    {(activeIndex) =>
-                        projects.map((project, index) => {
-                            const active = index === activeIndex;
-                            const link = active ? `/projects/${project.slug}` : '#';
+            <Carousel itemsCount={projects.length}>
+                {(activeIndex) =>
+                    projects.map((project, index) => {
+                        const active = index === activeIndex;
+                        const link = active && project.slug ? `/projects/${project.slug}` : '#';
 
-                            return (
-                                <Link key={project.slug} to={link}>
-                                    <Project active={active} isFirst={index === 0}>
-                                        <img src={project.cover} alt={project.title} />
-                                        <div>
-                                            <h1>{project.title}</h1>
-                                            <p>{project.subtitle}</p>
-                                        </div>
-                                    </Project>
-                                </Link>
-                            );
-                        })
-                    }
-                </Carousel>
-            ) : (
-                <Loading>
-                    <ReactLoading type="spin" />
-                </Loading>
-            )}
+                        return (
+                            <Link key={project.slug || project.id} to={link}>
+                                <Project active={active} isFirst={index === 0}>
+                                    <img src={project.cover} alt={project.title} />
+                                    <div>
+                                        <h1>{project.title}</h1>
+                                        <p>{project.subtitle}</p>
+                                    </div>
+                                </Project>
+                            </Link>
+                        );
+                    })
+                }
+            </Carousel>
         </Container>
     );
 };

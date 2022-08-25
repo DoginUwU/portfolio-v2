@@ -10,10 +10,20 @@ interface IProjectsContextProvider {
     children: React.ReactNode;
 }
 
+const initialLoadingProjects: Project[] = Array.from(Array(20)).map(
+    (_, index) =>
+        ({
+            id: index,
+            cover: 'assets/loading_carousel.webp',
+            title: 'Carregando...',
+            subtitle: 'Estamos iniciando nossos servidores... Aguarde',
+        } as unknown as Project),
+);
+
 const ProjectsContext = createContext<IProjectsContext>({} as IProjectsContext);
 
 const ProjectsProvider: React.FC<IProjectsContextProvider> = ({ children }) => {
-    const [projects, setProjects] = useState<Project[]>([]);
+    const [projects, setProjects] = useState<Project[]>(initialLoadingProjects);
 
     const getProjects = async () => {
         setProjects(await getAllProjects());

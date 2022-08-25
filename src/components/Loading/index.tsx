@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactLoading from 'react-loading';
+import { HashLoader } from 'react-spinners';
 
 import { Container } from './styles';
 
 const Loading: React.FC = () => (
     <Container>
-        <ReactLoading type="spin" />
+        <HashLoader color="white" />
     </Container>
 );
 

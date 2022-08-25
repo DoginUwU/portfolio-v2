@@ -1,18 +1,13 @@
 import React from 'react';
-import ReactLoading from 'react-loading';
+import Loading from '../../components/Loading';
 import { useProjects } from '../../context/ProjectsContext';
 
-import { Container, Content, Loading, Project } from './styles';
+import { Container, Content, Project } from './styles';
 
 const Projects: React.FC = () => {
     const { projects } = useProjects();
 
-    if (!projects.length)
-        return (
-            <Loading>
-                <ReactLoading type="spin" />
-            </Loading>
-        );
+    if (!projects.length) return <Loading />;
 
     return (
         <Container>
