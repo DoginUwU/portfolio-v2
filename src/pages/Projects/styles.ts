@@ -9,7 +9,6 @@ const Container = styled(BaseContainer)`
     justify-content: flex-start;
     gap: 50px;
     margin-top: 150px;
-    padding-bottom: 150px;
 
     h1 {
         color: ${({ theme }) => theme.colors.white};
@@ -79,11 +78,4 @@ const Project = styled(Link)`
     }
 `;
 
-const Loading = styled.div`
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
-
-export { Container, Content, Project, Loading };
+export { Container, Content, Project };

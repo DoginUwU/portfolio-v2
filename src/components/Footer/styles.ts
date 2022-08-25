@@ -5,6 +5,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     display: flex;
+    padding-bottom: 50px;
 
     & img {
         width: 150px;

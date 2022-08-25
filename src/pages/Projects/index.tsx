@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../../components/Footer';
+import GithubProjects from '../../components/GithubProjects';
 import Loading from '../../components/Loading';
 import { useProjects } from '../../context/ProjectsContext';
 
@@ -10,22 +12,26 @@ const Projects: React.FC = () => {
     if (!projects.length || isLoading) return <Loading />;
 
     return (
-        <Container>
-            <h1>
-                Meus <span>projetos</span>
-            </h1>
-            <Content>
-                {projects.map((project) => (
-                    <Project key={project.id} to={`/projects/${project.slug}`}>
-                        <img src={project.cover} alt={project.title} />
-                        <div>
-                            <h2>{project.title}</h2>
-                            <p>{project.subtitle}</p>
-                        </div>
-                    </Project>
-                ))}
-            </Content>
-        </Container>
+        <>
+            <Container>
+                <h1>
+                    Meus <span>projetos</span>
+                </h1>
+                <Content>
+                    {projects.map((project) => (
+                        <Project key={project.id} to={`/projects/${project.slug}`}>
+                            <img src={project.cover} alt={project.title} />
+                            <div>
+                                <h2>{project.title}</h2>
+                                <p>{project.subtitle}</p>
+                            </div>
+                        </Project>
+                    ))}
+                </Content>
+            </Container>
+            <GithubProjects />
+            <Footer />
+        </>
     );
 };
 
