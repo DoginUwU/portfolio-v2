@@ -5,9 +5,9 @@ import { useProjects } from '../../context/ProjectsContext';
 import { Container, Content, Project } from './styles';
 
 const Projects: React.FC = () => {
-    const { projects } = useProjects();
+    const { projects, isLoading } = useProjects();
 
-    if (!projects.length) return <Loading />;
+    if (!projects.length || isLoading) return <Loading />;
 
     return (
         <Container>

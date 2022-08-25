@@ -4,6 +4,7 @@ import { getAllProjects } from '../network/lib/project';
 
 interface IProjectsContext {
     projects: Project[];
+    isLoading: boolean;
 }
 
 interface IProjectsContextProvider {
@@ -24,16 +25,18 @@ const ProjectsContext = createContext<IProjectsContext>({} as IProjectsContext);
 
 const ProjectsProvider: React.FC<IProjectsContextProvider> = ({ children }) => {
     const [projects, setProjects] = useState<Project[]>(initialLoadingProjects);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getProjects = async () => {
         setProjects(await getAllProjects());
+        setIsLoading(false);
     };
 
     useEffect(() => {
         getProjects();
     }, []);
 
-    const value = useMemo(() => ({ projects }), [projects]);
+    const value = useMemo(() => ({ projects, isLoading }), [projects, isLoading]);
 
     return <ProjectsContext.Provider value={value}>{children}</ProjectsContext.Provider>;
 };
