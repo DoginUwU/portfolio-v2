@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../components/Footer';
 
 import { Container } from './styles';
 
@@ -19,6 +20,7 @@ const Home: React.FC = () => (
         <ReactPower />
         <Newspaper />
         <Contact />
+        <Footer />
     </Container>
 );
 

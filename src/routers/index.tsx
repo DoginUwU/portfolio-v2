@@ -23,8 +23,6 @@ const Router: React.FC = () => (
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
-
-        <Footer />
     </BrowserRouter>
 );
 

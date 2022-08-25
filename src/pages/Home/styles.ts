@@ -8,7 +8,7 @@ const Container = styled.div`
     justify-content: flex-start;
     overflow-x: hidden;
     gap: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 `;
 
 export { Container };
