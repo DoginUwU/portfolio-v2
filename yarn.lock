@@ -1364,7 +1364,7 @@ download@^6.2.5:
     file-type "5.2.0"
     filenamify "^2.0.0"
     get-stream "^3.0.0"
-    got "^7.0.0"
+    got "^7.1.0"
     make-dir "^1.0.0"
     p-event "^1.0.0"
     pify "^3.0.0"
