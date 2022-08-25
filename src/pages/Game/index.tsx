@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactLoading from 'react-loading';
+import { HashLoader } from 'react-spinners';
 
 import { Game as GameContainer, Container, Loading } from './styles';
 
@@ -21,7 +22,7 @@ const Game: React.FC = () => {
             />
             {!loaded && (
                 <Loading>
-                    <ReactLoading type="spin" />
+                    <HashLoader color="white" />
                 </Loading>
             )}
         </GameContainer>
