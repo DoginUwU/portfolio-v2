@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTheme } from 'styled-components';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
@@ -18,15 +18,18 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
     const [activeIndex, setActiveIndex] = useState(1);
     const translateX = isMobile ? activeIndex * 100 : activeIndex * 33.33 - 33;
 
-    const checkIndex = (index: number) => {
-        if (index < 0) {
-            return itemsCount - 1;
-        }
-        if (index > itemsCount - 1) {
-            return 0;
-        }
-        return index;
-    };
+    const checkIndex = useCallback(
+        (index: number) => {
+            if (index < 0) {
+                return itemsCount - 1;
+            }
+            if (index > itemsCount - 1) {
+                return 0;
+            }
+            return index;
+        },
+        [itemsCount],
+    );
 
     const updateIndex = (index: number) => {
         setActiveIndex(checkIndex(index));
@@ -45,7 +48,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsCount }) => {
             }, 5000);
 
         return () => clearInterval(interval);
-    }, [stopAutoCarousel]);
+    }, [stopAutoCarousel, itemsCount]);
 
     return (
         <Content>

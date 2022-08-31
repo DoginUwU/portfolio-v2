@@ -11,7 +11,7 @@ interface IProjectsContextProvider {
     children: React.ReactNode;
 }
 
-const initialLoadingProjects: Project[] = Array.from(Array(20)).map(
+const initialLoadingProjects: Project[] = Array.from(Array(3)).map(
     (_, index) =>
         ({
             id: index,
@@ -28,7 +28,7 @@ const ProjectsProvider: React.FC<IProjectsContextProvider> = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const getProjects = async () => {
-        setProjects(await getAllProjects());
+        // setProjects(await getAllProjects());
         setIsLoading(false);
     };
 

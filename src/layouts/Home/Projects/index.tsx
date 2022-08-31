@@ -1,7 +1,8 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
-import ReactLoading from 'react-loading';
 import { Link } from 'react-router-dom';
 import { useTheme } from 'styled-components';
+import { Project as IProject } from '../../../@types/project';
 import Button from '../../../components/Button';
 import Carousel from '../../../components/Carousel';
 import { useProjects } from '../../../context/ProjectsContext';
@@ -10,6 +11,7 @@ import { Container, Header, Project } from './styles';
 
 const Projects: React.FC = () => {
     const { projects } = useProjects();
+    const [carouselItems, setCarouselItems] = React.useState<IProject[]>(projects);
     const theme = useTheme();
 
     return (
@@ -25,14 +27,19 @@ const Projects: React.FC = () => {
                     </Link>
                 </div>
             </Header>
-            <Carousel itemsCount={projects.length}>
+            <Carousel itemsCount={carouselItems.length}>
                 {(activeIndex) =>
-                    projects.map((project, index) => {
+                    carouselItems.map((project, index) => {
                         const active = index === activeIndex;
                         const link = active && project.slug ? `/projects/${project.slug}` : '#';
 
+                        // infite loop
+                        if (active && activeIndex === carouselItems.length - 3) {
+                            setCarouselItems([...carouselItems, ...carouselItems]);
+                        }
+
                         return (
-                            <Link key={project.slug || project.id} to={link}>
+                            <Link key={`${project.id} - ${index}`} to={link}>
                                 <Project active={active} isFirst={index === 0}>
                                     <img src={project.cover} alt={project.title} />
                                     <div>
